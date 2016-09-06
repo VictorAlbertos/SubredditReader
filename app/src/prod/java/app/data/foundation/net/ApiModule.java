@@ -16,10 +16,14 @@
 
 package app.data.foundation.net;
 
+import app.data.sections.subreddits.SubredditApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ryanharter.auto.value.gson.AutoValueGsonTypeAdapterFactory;
 import dagger.Module;
+import dagger.Provides;
 import javax.inject.Inject;
+import javax.inject.Singleton;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -33,14 +37,18 @@ public class ApiModule {
 
   @Inject public ApiModule() {
     Gson gson = new GsonBuilder()
-        //.registerTypeAdapterFactory(new AutoValueGsonTypeAdapterFactory())
+        .registerTypeAdapterFactory(new AutoValueGsonTypeAdapterFactory())
         .create();
 
     this.retrofit = new Retrofit.Builder()
-        .baseUrl("api_url")
+        .baseUrl("https://api.reddit.com")
         .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build();
+  }
+
+  @Singleton @Provides public SubredditApi provideSubredditApi() {
+    return retrofit.create(SubredditApi.class);
   }
 
 }

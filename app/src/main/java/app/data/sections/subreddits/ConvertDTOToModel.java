@@ -18,11 +18,12 @@ final class ConvertDTOToModel {
     return Observable.just(listingDTO.data().children())
         .flatMapIterable(postDTOs -> postDTOs)
         .flatMap(postDTO ->
-           getRelativeTimeSpan.react(postDTO.created_utc())
-              .map(relativeTimeSpan ->
-                 Post.create(relativeTimeSpan, postDTO.thumbnail(), postDTO.title(), postDTO.author(),
-                    postDTO.url(), postDTO.score(), postDTO.num_comments())
-              )
+            getRelativeTimeSpan.react(postDTO.data().created_utc())
+                .map(relativeTimeSpan ->
+                    Post.create(relativeTimeSpan, postDTO.data().thumbnail(),
+                        postDTO.data().title(), postDTO.data().author(),
+                        postDTO.data().url(), postDTO.data().score(), postDTO.data().num_comments())
+                )
         )
         .toList()
         .map(posts -> {

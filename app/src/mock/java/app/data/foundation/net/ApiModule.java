@@ -16,12 +16,20 @@
 
 package app.data.foundation.net;
 
+import app.data.sections.subreddits.SubredditApi;
 import dagger.Module;
+import dagger.Provides;
+import io.victoralbertos.mockery.api.Mockery;
+import javax.inject.Singleton;
 
 /**
  * Resolve networking dependencies providing a mock implementation using Mockery library.
  */
 @Module
 public class ApiModule {
-
+  @Singleton @Provides public SubredditApi provideSubredditApi() {
+    return new Mockery.Builder<SubredditApi>()
+        .mock(SubredditApi.class)
+        .build();
+  }
 }
