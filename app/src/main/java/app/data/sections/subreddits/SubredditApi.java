@@ -26,7 +26,7 @@ public interface SubredditApi {
   Observable<Response<ListingDTO>> getPostsPage(
       @Valid(value = STRING, legal = "programming") @Path("subreddit") String subreddit,
       @Valid(value = STRING, legal = "new") @Path("sort") String sort,
-      @Optional @Query("count") int count,
+      @Optional @Query("limit") int limit,
       @Optional @Query("before") String before,
       @Optional @Query("after") String after);
 }

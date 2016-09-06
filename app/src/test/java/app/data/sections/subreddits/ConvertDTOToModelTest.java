@@ -20,7 +20,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
-public class ConvertDTOToModelTest {
+public final class ConvertDTOToModelTest {
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
   @Mock GetRelativeTimeSpan getRelativeTimeSpan;
   private ConvertDTOToModel convertDTOToModelUT;
