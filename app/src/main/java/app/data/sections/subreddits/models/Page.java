@@ -1,4 +1,4 @@
-package app.data.sections.subredits.models;
+package app.data.sections.subreddits.models;
 
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;

@@ -16,6 +16,7 @@
 
 package app.data.foundation;
 
+import android.content.Context;
 import android.support.annotation.StringRes;
 
 /**
@@ -24,4 +25,5 @@ import android.support.annotation.StringRes;
  */
 public interface Resources {
   String getString(@StringRes int idResource);
+  Context getContext();
 }

@@ -1,4 +1,4 @@
-package app.data.sections.subredits.dtos;
+package app.data.sections.subreddits.dtos;
 
 import android.support.annotation.Nullable;
 import com.google.auto.value.AutoValue;

@@ -1,4 +1,4 @@
-package app.data.sections.subredits.dtos;
+package app.data.sections.subreddits.dtos;
 
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;

@@ -16,6 +16,8 @@
 
 package app.data.foundation.dagger;
 
+import android.content.Context;
+import android.support.annotation.StringRes;
 import app.data.foundation.Resources;
 import app.data.foundation.net.ApiModule;
 import app.presentation.foundation.BaseApp;
@@ -35,7 +37,15 @@ import javax.inject.Singleton;
 public final class DataModule {
 
   @Singleton @Provides Resources provideUiUtils(BaseApp baseApp) {
-    return baseApp::getString;
+    return new Resources() {
+      @Override public String getString(@StringRes int idResource) {
+        return baseApp.getString(idResource);
+      }
+
+      @Override public Context getContext() {
+        return baseApp;
+      }
+    };
   }
 
   @Singleton
