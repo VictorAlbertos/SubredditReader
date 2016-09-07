@@ -17,7 +17,7 @@ import static io.victoralbertos.mockery.api.built_in_mockery.Valid.Template.STRI
 /**
  * Definition for Retrofit and Mockery of every endpoint required by the Api.
  */
-@RxRetrofit(delay = 2000, errorResponseAdapter = ErrorAdapter.class, failurePercent = 75)
+@RxRetrofit(delay = 2000, errorResponseAdapter = ErrorAdapter.class, failurePercent = 5)
 public interface SubredditApi {
 
 

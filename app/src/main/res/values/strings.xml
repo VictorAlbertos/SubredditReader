@@ -3,7 +3,10 @@
   <string name="errors_happen" translatable="false">Errors happen ¯\\_(ツ)_/¯. Sorry for the
     inconvenience.
   </string>
-  <string name="fill_missing_fields">Fill missing fields</string>
   <string name="loading">Loading</string>
-
+  <string name="sort_posts">Sort posts</string>
+  <string name="sort_by_new">New</string>
+  <string name="sort_by_top">Top</string>
+  <string name="sort_by_hot">Hot</string>
+  <string name="sort_by_controversial">Controversial</string>
 </resources>

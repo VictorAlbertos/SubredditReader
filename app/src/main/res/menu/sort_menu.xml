@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <item
+        android:title="Sort posts"
+        app:showAsAction="ifRoom">
+      <menu>
+        <item
+            android:id="@+id/sort_by_new"
+            android:title="@string/sort_by_new"/>
+        <item
+            android:id="@+id/sort_by_top"
+            android:title="@string/sort_by_top"/>
+        <item
+            android:id="@+id/sort_by_hot"
+            android:title="@string/sort_by_hot"/>
+        <item
+            android:id="@+id/sort_by_controversial"
+            android:title="@string/sort_by_controversial"/>
+      </menu>
+    </item>
+  </group>
+</menu>
