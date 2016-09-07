@@ -20,8 +20,11 @@ import android.content.Context;
 import android.support.annotation.StringRes;
 import app.data.foundation.Resources;
 import app.data.foundation.net.ApiModule;
+import app.data.sections.subreddits.GetRelativeTimeSpan;
+import app.data.sections.subreddits.GetRelativeTimeSpanBehaviour;
 import app.presentation.foundation.BaseApp;
 import com.google.gson.TypeAdapterFactory;
+import com.ryanharter.auto.value.gson.AutoValueGsonTypeAdapterFactory;
 import dagger.Module;
 import dagger.Provides;
 import io.reactivecache.ReactiveCache;
@@ -53,8 +56,13 @@ public final class DataModule {
     return new ReactiveCache.Builder()
         .using(baseApp.getFilesDir(), new GsonAutoValueSpeaker() {
           @Override protected TypeAdapterFactory autoValueGsonTypeAdapterFactory() {
-            return null; //new AutoValueGsonTypeAdapterFactory();
+            return new AutoValueGsonTypeAdapterFactory();
           }
         });
+  }
+
+  @Singleton
+  @Provides public GetRelativeTimeSpan provideGetRelativeTimeSpan(BaseApp baseApp) {
+    return new GetRelativeTimeSpanBehaviour(baseApp);
   }
 }

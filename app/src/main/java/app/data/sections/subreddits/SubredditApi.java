@@ -3,7 +3,7 @@ package app.data.sections.subreddits;
 import app.data.foundation.net.ErrorAdapter;
 import app.data.sections.subreddits.dtos.ListingDTO;
 import io.victoralbertos.mockery.api.built_in_interceptor.RxRetrofit;
-import io.victoralbertos.mockery.api.built_in_mockery.DTO;
+import io.victoralbertos.mockery.api.built_in_mockery.DTOArgs;
 import io.victoralbertos.mockery.api.built_in_mockery.Optional;
 import io.victoralbertos.mockery.api.built_in_mockery.Valid;
 import retrofit2.Response;
@@ -17,11 +17,11 @@ import static io.victoralbertos.mockery.api.built_in_mockery.Valid.Template.STRI
 /**
  * Definition for Retrofit and Mockery of every endpoint required by the Api.
  */
-@RxRetrofit(delay = 2000, errorResponseAdapter = ErrorAdapter.class)
+@RxRetrofit(delay = 2000, errorResponseAdapter = ErrorAdapter.class, failurePercent = 75)
 public interface SubredditApi {
 
 
-  @DTO(MockeryListingDTO.class)
+  @DTOArgs(MockeryListingDTO.class)
   @GET("/r/{subreddit}/{sort}.json")
   Observable<Response<ListingDTO>> getPostsPage(
       @Valid(value = STRING, legal = "programming") @Path("subreddit") String subreddit,

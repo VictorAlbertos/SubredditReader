@@ -52,6 +52,7 @@ android {
     main {
       res.srcDirs =
               [
+                      'src/main/res/sections/posts',
                       'src/main/res/sections',
                       'src/main/res'
               ]
@@ -137,6 +138,7 @@ dependencies {
   //Presentation layer
   compile "com.android.support:appcompat-v7:${versions.support}"
   compile "com.android.support:design:${versions.support}"
+  compile "com.android.support:cardview-v7:${versions.support}"
   compile "io.reactivex:rxandroid:1.2.1"
   compile "com.squareup.picasso:picasso:2.5.2"
   compile("com.afollestad.material-dialogs:core:0.8.6.2") {
@@ -146,7 +148,7 @@ dependencies {
   apt "com.jakewharton:butterknife-compiler:${versions.butterknife}"
   compile "com.trello:rxlifecycle:${versions.rxlifecycle}"
   compile "com.trello:rxlifecycle-components:${versions.rxlifecycle}"
-  compile "com.github.miguelbcr:OkAdapters:0.1.9"
+  compile "com.github.VictorAlbertos:OkAdapters:0.2.2"
 
   //Testing
   testCompile 'junit:junit:4.12'

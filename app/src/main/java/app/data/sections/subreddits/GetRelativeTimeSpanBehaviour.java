@@ -5,7 +5,7 @@ import android.text.format.DateUtils;
 import javax.inject.Inject;
 import rx.Observable;
 
-class GetRelativeTimeSpanBehaviour implements GetRelativeTimeSpan {
+public class GetRelativeTimeSpanBehaviour implements GetRelativeTimeSpan {
   private final Context context;
 
   @Inject public GetRelativeTimeSpanBehaviour(Context context) {

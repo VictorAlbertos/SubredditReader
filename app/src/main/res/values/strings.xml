@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name" translatable="false">BaseApp</string>
+  <string name="app_name" translatable="false">Subreddit Reader</string>
   <string name="errors_happen" translatable="false">Errors happen ¯\\_(ツ)_/¯. Sorry for the
     inconvenience.
   </string>

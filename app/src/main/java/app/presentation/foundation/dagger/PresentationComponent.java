@@ -16,6 +16,8 @@
 
 package app.presentation.foundation.dagger;
 
+import app.presentation.sections.subreddits.detail.PostActivity;
+import app.presentation.sections.subreddits.list.PostsActivity;
 import dagger.Component;
 import javax.inject.Singleton;
 
@@ -25,5 +27,6 @@ import javax.inject.Singleton;
  */
 @Singleton @Component(modules = {PresentationModule.class})
 public interface PresentationComponent {
-
+  void inject(PostsActivity postsActivity);
+  void inject(PostActivity postActivity);
 }
